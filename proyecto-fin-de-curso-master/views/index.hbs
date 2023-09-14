@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Incio</title>
+  </head>
+  <body>
+    <header class="color-cabecera">
+        <div class="flex centro ww100vw">
+        <img src="/img/logo.png" class="imagen">
+            <ul class="flex centro mt-3 ap">
+                <a href="/"><li class="mx-4"><strong>Inicio</strong></li></a>
+                <a href="/reserva"><li class="mx-4"><strong>Reserva</strong></li></a>
+                <a href="/pide"><li class="mx-4"><strong>Pedido</strong></li></a>
+                <a href="/contacto"><li class="mx-4"><strong>Contacto</strong></li></a>
+                    {{#if name}}
+                    <a href="/logout"><li class="mx-4"><strong>Logout</strong></li></a>
+                    {{else}}
+                    <a href="/login"><li class="mx-4"><strong>Iniciar sesion</strong></li></a>
+                  {{/if}}
+            </ul>
+        </div>
+    </header>
+    <div class="color-body flex centro ww100vw altura">
+      <div class="ww70">
+        <h1 class="font">Que te apetece pedir?</h1>
+        <div class="flex color-cabecera wwpide p-2 centro">
+          <a href="/pide"><p class="mx-2 nomargim">Pide ahora</p></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

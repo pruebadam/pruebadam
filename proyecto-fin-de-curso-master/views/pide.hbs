@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir</title>
+</head>
+<body>
+    <header class="flex">
+        <div class="flex alcentro ww100vw">
+            <a href="/"><img src="/img/logoblanco.png" class="imagenpequena"></a>
+            <h5 class="mt-3 ms-5">ThaiNavarro</h5>
+        </div>
+        <div class="ww90vw flex derecha me-5">
+            {{#if name}}
+                <a href="/logout" class="nodecoration amarillo negrita"><strong>Logout</strong></a>
+            {{else}}
+                <a href="/login" class="nodecoration amarillo negrita"><strong>Iniciar sesion</strong></a>
+            {{/if}}
+        </div>
+    </header>
+    <div class="ww100vw flex centro mt-3">
+        <button class="ww50vw flex centro mx-5 domicilio" onclick="btn1()" id="boton1">
+            <p class="nomargim">Pedido a domicilio</p>
+        </button>
+        <button class="ww50vw flex centro recoger mx-5" onclick="btn2()" id="boton2">
+            <p class="nomargim">Pedido para recoger</p>
+        </button>
+    </div>
+    <div class="ww100vw mt-5">
+        <ul class="ww100vw bloqueul flex">
+            <li class="listapedir">
+                <h4 onclick="abrir()">Especialidades</h4>
+            </li>
+            <li class="listapedir">
+                <h4 onclick="aentrante()">Entrantes</h4>
+            </li>
+            <li class="listapedir">
+                <h4 onclick="asopa()">Sopas</h4>
+            </li>
+            <li class="listapedir">
+                <h4 onclick="apostre()">Postres</h4>
+            </li>
+        </ul>
+    </div>
+    <hr class="linea">
+    <div class="mx-5 mt-5" id="especialidad">
+        <h3>
+            Especialidades
+        </h3>
+        <div class="flex centro ww100">
+            <div class="ww65vw flex flex-wrap centro">
+                {{!-- NAVARROZ --}}
+                {{!-- NAVARROZ --}}
+                {{!-- NAVARROZ --}}
+                <a href="#popup" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/plato/arroz.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Navarroz</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/plato/arroz.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Navarroz</h2>
+                            <h4 class="mt-3">Quieres quitar algun ingrediente?</h4>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda mt-3">
+                                    <p class="nomargim">Sin cebolla</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="cebolla">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin champiñones</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="champiñones">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin pollo</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="pollo">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin cebolla frita</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="frita">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin salsa</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="salsa">
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="ww100 pedido" onclick="navarroz()"><strong>Añadir al pedido 7€</strong></button>
+                            <p class="verde" style="display: none;" id="verde">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                {{!-- ELVISA    --}}
+                {{!-- ELVISA    --}}
+                {{!-- ELVISA    --}}
+                <a href="#popup1" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/plato/i.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Elvisa</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup1">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/plato/i.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Elvisa</h2>
+                            <h4 class="mt-3">Quieres quitar algun ingrediente?</h4>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda mt-3">
+                                    <p class="nomargim">Sin tomate</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="tomate">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin gambas</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="gambas">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin pepino</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="pepino">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin cebolla frita</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="frita1">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin salsa</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="salsa1">
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="ww100 pedido" onclick="ensalada()"><strong>Añadir al pedido 8,5€</strong></button>
+                            <p class="verde" style="display: none;" id="verdee">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                {{!-- CHEN --}}
+                {{!-- CHEN --}}
+                {{!-- CHEN --}}
+                    <a href="#popup2" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/plato/chem.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Chen</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup2">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/plato/chem.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Chen</h2>
+                            <h4 class="mt-3">Quieres quitar algun ingrediente?</h4>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda mt-3">
+                                    <p class="nomargim">Sin pollo</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="pollo1">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin ternera</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="ternera">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin tofu</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="tofu">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin sesamo</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="sesamo">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin salsa</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="salsa2">
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="ww100 pedido" onclick="chen()"><strong>Añadir al pedido 8€</strong></button>
+                            <p class="verde" style="display: none;" id="verde1">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                {{!-- 4TUNOODLES --}}
+                {{!-- 4TUNOODLES --}}
+                {{!-- 4TUNOODLES --}}
+                    <a href="#popup3" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/plato/pasta.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">4tuNoodles</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup3">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/plato/pasta.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">4tuNoodles</h2>
+                            <h4 class="mt-3">Quieres quitar algun ingrediente?</h4>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda mt-3">
+                                    <p class="nomargim">Sin cerdo</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="cerdo">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin cachai</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="cachai">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin zanahoria</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="zanahoria">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin pak choi</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="packchoi">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin salsa</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="salsa3">
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="ww100 pedido" onclick="fortu()"><strong>Añadir al pedido 7,5€</strong></button>
+                            <p class="verde" style="display: none;" id="verde2">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                {{!-- ADRIAN ARROZ --}}
+                {{!-- ADRIAN ARROZ --}}
+                {{!-- ADRIAN ARROZ --}}
+                    <a href="#popup4" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/plato/tom.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Adrian Arroz</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup4">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/plato/tom.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Adrian arroz</h2>
+                            <h4 class="mt-3">Quieres quitar algun ingrediente?</h4>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda mt-3">
+                                    <p class="nomargim">Sin pimientos</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="pimiento">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin piña</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="piña">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin pollo</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="pollo3">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin sesamo</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="sesamo2">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin salsa</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="salsa4">
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="ww100 pedido" onclick="adrian()"><strong>Añadir al pedido 7€</strong></button>
+                            <p class="verde" style="display: none;" id="verde3">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                {{!-- XEXUGA --}}
+                {{!-- XEXUGA --}}
+                {{!-- XEXUGA --}}
+                    <a href="#popup5" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/plato/ensalada.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Xexuga</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup5">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/plato/ensalada.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Xexuga</h2>
+                            <h4 class="mt-3">Quieres quitar algun ingrediente?</h4>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda mt-3">
+                                    <p class="nomargim">Sin queso de cabra</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="queso">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin cebolla frita</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="frita3">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin papaya</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="papaya">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin tomate</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="tomate1">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="flex">
+                                <div class="ww50 flex izquierda">
+                                    <p class="nomargim">Sin salsa</p>
+                                </div>
+                                <div class="ww50 flex dreta">
+                                    <input type="checkbox" class="me-2" id="salsa5">
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="ww100 pedido" onclick="xexuga()"><strong>Añadir al pedido 9€</strong></button>
+                            <p class="verde" style="display: none;" id="verde5">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-5 mt-5 none" id="entrante">
+        <h3>
+            Entrantes
+        </h3>
+        <div class="flex centro ww100">
+            <div class="ww65vw flex flex-wrap centro">
+                <a href="#popup11" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/entrante/takoyaki.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Takoyaki</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup11">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/entrante/takoyaki.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Takoyaki</h2>
+                            <hr>
+                            <button class="ww100 pedido" onclick="takoyaki()"><strong>Añadir al pedido 5€</strong></button>
+                            <p class="verde" style="display: none;" id="verdex">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#popup12" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/entrante/wantun.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Wan tun</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup12">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/entrante/wantun.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Wan tun</h2>
+                            <hr>
+                            <button class="ww100 pedido" onclick="wantun()"><strong>Añadir al pedido 4€</strong></button>
+                            <p class="verde" style="display: none;" id="verdex1">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#popup13" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/entrante/gyozas.jpg" class="imagenmedia">
+                    <h2 class="nomargim my-2">Gyozas</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup13">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/entrante/gyozas.jpg" class="imagenmedia">
+                            <h2 class="nomargim my-2">Gyozas</h2>
+                            <hr>
+                            <button class="ww100 pedido" onclick="gyozas()"><strong>Añadir al pedido 4,5€</strong></button>
+                            <p class="verde" style="display: none;" id="verdex2">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-5 mt-5 none" id="sopa">
+        <h3>
+            Sopas
+        </h3>
+        <div class="flex centro ww100">
+            <div class="ww65vw flex flex-wrap centro">
+                <a href="#popup14" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/sopa/dowdo.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Sopa dowdo</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup14">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/sopa/dowdo.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Sopa dowdo</h2>
+                            <hr>
+                            <button class="ww100 pedido" onclick="dowdo()"><strong>Añadir al pedido 4,5€</strong></button>
+                            <p class="verde" style="display: none;" id="verdex3">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#popup15" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/sopa/yaya.webp" class="imagenmedia">
+                    <h2 class="nomargim my-2">Sopa la yaya</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup15">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/sopa/yaya.webp" class="imagenmedia">
+                            <h2 class="nomargim my-2">Sopa la yaya</h2>
+                            <hr>
+                            <button class="ww100 pedido" onclick="yaya()"><strong>Añadir al pedido 4,5€</strong></button>
+                            <p class="verde" style="display: none;" id="verdex5">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#popup16" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/sopa/pobre.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Sopa de pobre</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup16">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/sopa/pobre.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Sopa de pobre</h2>
+                            <hr>
+                            <button class="ww100 pedido" onclick="pobre()"><strong>Añadir al pedido 4,5€</strong></button>
+                            <p class="verde" style="display: none;" id="verdex6">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-5 mt-5 none" id="postre">
+        <h3>
+            Postres
+        </h3>
+        <div class="flex centro ww100">
+            <div class="ww65vw flex flex-wrap centro">
+                <a href="#popup17" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/postre/postre.webp" class="imagenmedia">
+                    <h2 class="nomargim my-2">Coulant</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup17">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/postre/postre.webp" class="imagenmedia">
+                            <h2 class="nomargim my-2">Coulant</h2>
+                            <hr>
+                            <button class="ww100 pedido" onclick="coulant()"><strong>Añadir al pedido 5€</strong></button>
+                            <p class="verde" style="display: none;" id="verdex7">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#popup18" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/postre/tarta.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Tarta de galleta</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup18">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/postre/tarta.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Tarta de galleta</h2>
+                            <hr>
+                            <button class="ww100 pedido" onclick="tarta()"><strong>Añadir al pedido 3€</strong></button>
+                            <p class="verde" style="display: none;" id="verdex8">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#popup19" class="nodecoration text-black my-3">
+                    <div class="flex columna centro border suscosas mx-5 bg-div pointer">
+                    <img src="/img/postre/queso.png" class="imagenmedia">
+                    <h2 class="nomargim my-2">Tarta de queso</h2>
+                </div></a>
+                <div class="flex columna centro border suscosas bg-div pointer popup" id="popup19">
+                    <div class="popup-content">
+                        <div class="mx-5">
+                            <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            <img src="/img/postre/queso.png" class="imagenmedia">
+                            <h2 class="nomargim my-2">Tarta de queso</h2>
+                            <hr>
+                            <button class="ww100 pedido" onclick="queso()"><strong>Añadir al pedido 5,5€</strong></button>
+                            <p class="verde" style="display: none;" id="verdex9">Añadido al pedido</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-5 color-cabecera">
+        <a href="#popup10" class="nodecoration text-black" onclick="raton()">
+            <div class="flex centro">
+                <h1 class="mt-2"><strong>Su pedido</strong></h1>
+            </div>
+            <div class="flex columna centro border suscosas bg-div pointer popup" id="popup10">
+                    <div class="popup-content tamaño crol">
+                        <div class="mx-5">
+                            <div class="ww100 flex derecha">
+                                <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+                            </div>
+                            <div id="nonex" class="mt-5"></div>
+                        </div>
+                    </div>
+            </div>
+        </a>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

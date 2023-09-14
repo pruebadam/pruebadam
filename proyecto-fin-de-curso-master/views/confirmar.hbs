@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar</title>
+</head>
+<body onload="funcion()">
+    <header class="flex">
+        <div class="flex alcentro ww100vw">
+            <a href="/"><img src="/img/logoblanco.png" class="imagenpequena"></a>
+            <h5 class="mt-3 ms-5">ThaiNavarro</h5>
+        </div>
+        <div class="ww90vw flex derecha me-5">
+            {{#if name}}
+                <a href="/logout" class="nodecoration amarillo negrita"><strong>Logout</strong></a>
+            {{else}}
+                <a href="/login" class="nodecoration amarillo negrita"><strong>Iniciar sesion</strong></a>
+            {{/if}}
+        </div>
+    </header>
+    {{#if name}}
+    <div class="m-3 flex centro he90 columna bg-gris">
+        <div class="flex centro columna border px-5 py-3 sombra fondoamarillo">
+            <h1 class="my-3">Confirme su pedido</h1>
+            <h3 class="my-3">A nombre de {{name}}</h3>
+            <div>
+                <div id="recogida" style="display: none;" class="my-3 flex columna centro ww100">
+                    <h3>Pedido para recoger</h3>
+                    <form action="/confirmar" method="POST">
+                        <hr class="ww100 mt-5">
+                        <h3 id="importe"></h3>
+                        <div class="flex centro ww100 my-3">
+                            <button type="submit" class="ww50 mx-2 efectivo" name="recogerefectivo">Efectivo</button>
+                            <button type="submit"class="ww50 mx-2 tarjeta" name="recogertarjeta">Tarjeta</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="domicilio" style="display: none;" class="flex columna centro ww100">
+                    <h3 class="my-3">Pedido a domicilio</h3>
+                    <form action="/confirmar" method="POST">
+                        <input type="text" placeholder="Introduzca su dirección" class="ww100 my-3 inputdomicilio" name="direccion">
+                        <hr class="ww100 mt-5">
+                        <h3 id="importe"></h3>
+                        <div class="flex centro ww100 my-3">
+                            <button type="submit" class="ww50 mx-2 efectivo" name="efectivo">Efectivo</button>
+                            <button type="submit"class="ww50 mx-2 tarjeta" name="tarjeta">Tarjeta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="m-3 flex centro he90 columna">
+        <div class="text-danger flex centro columna">
+        <h1 class="my-3">Antes de confirmar su pedido tiene que iniciar sesion</h1>
+        <a href="/login" class="nodecoration amarillo negrita my-3"><strong>Iniciar sesion</strong></a>
+        </div>
+    </div>
+    {{/if}}
+    <script src="main.js"></script>
+</body>
+</html>
